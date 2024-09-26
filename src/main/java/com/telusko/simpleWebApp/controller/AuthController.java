@@ -21,11 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", allowCredentials = "true")
 public class AuthController {
-
+    
+    // @CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "true")
     @PostMapping("/google")
-    @CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", allowCredentials = "true")
     public ResponseEntity<?> verifyGoogleToken(@RequestBody Map<String, String> tokenMap) {
         String token = tokenMap.get("token");
         GoogleIdToken.Payload payload = verifyToken(token);

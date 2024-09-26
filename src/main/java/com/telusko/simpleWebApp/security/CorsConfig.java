@@ -9,10 +9,10 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Allows CORS on all endpoints
-                .allowedOrigins("http://localhost:3000") // Replace with your frontend's URL
+                .allowedOrigins("*") // Replace with your frontend's URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true)
+                .allowCredentials(false)
                 .maxAge(3600); // Cache the preflight response for 1 hour
     }
 }
